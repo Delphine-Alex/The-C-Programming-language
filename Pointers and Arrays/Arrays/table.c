@@ -1,28 +1,57 @@
 #include <stdio.h>
+
+void evenNumber(int *table, int sizeTable);
+
+int sumTable(int *table, int sizeTable);
+
+double averageTable(int *table, int sizeTableau);
  
 int main(int argc, char *argv[])
 {
-    int table[4], i;
+    int table[4] = {10, 15, 3, 34};
     
-    printf("Adress of the table: %p\n\n", table);
+    evenNumber(table, 4);
+    printf("Sum of the table: %d\n", sumTable(table, 4));
+    printf("Average of the table: %f\n", averageTable(table, 4));
+ 
+}
 
-    table[0] = 10;
-    printf("Case 1: %d\n", table[0]);
-    table[1] = 23;
-    printf("Case 2: %d\n", *(table + 1));
-    table[2] = 505;
-    printf("Case 3: %d\n", table[2]);
-    table[3] = 8;
-    printf("Case 4: %d\n\n", table[3]);
-    
-    printf("First value of the table: %d\n\n", *table);
+void evenNumber(int *table, int sizeTable)
+{
+    int i;
     
     i = 0;
     while(i < 4)
     {
-        printf("Value: %d\n", table[i]);
+        if (table[i] % 2 == 0)
+        {
+            printf("%d is a even number!\n", table[i]);
+        }
         i++;
     }
- 
-    return 0;
+}
+
+int sumTable(int *table, int sizeTable){
+    int i, sum;
+    
+    i = 0, sum = 0;
+    while(i < 4)
+    {
+        sum += table[i];
+        i++;
+    }
+    return sum;
+}
+
+double averageTable(int *table, int sizeTable)
+{
+    int i, somme;
+    
+    i = 0, somme = 0;
+    while(i < 4)
+    {
+        somme += table[i];
+        i++;
+    }
+    return (double)somme/(double)sizeTable;
 }
