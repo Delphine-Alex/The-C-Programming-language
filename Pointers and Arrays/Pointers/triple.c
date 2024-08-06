@@ -1,20 +1,23 @@
 #include <stdio.h>
 
-void triple(int *number);
-
-int main(int argc, char *argv[])
+void triple(int *triple)
 {
-  int value;
-  
-  value = 5;
-  triple(&value);
-
-  printf("%d\n", value);
-    
-  return 0;
+  // int *triple = &number
+  printf("3. The value (adress of number) is: %p\n", triple);
+  printf("4. The value of the variable is: %d\n\n", *triple);
+  *triple *= 3;
 }
 
-void triple(int *number)
+int main()
 {
-  *number *= 3;
+    int number = 5;
+    printf("1. The adress of the variable is: %p\n\n", &number);
+
+    int *PointeurNumber = &number;
+    printf("2. The value of PointeurNumber is: %p\n", PointeurNumber);
+    printf("3. The adress of PointeurNumber is: %p\n\n", &PointeurNumber);
+    
+    triple(&number);
+    printf("5. Triple of 5 is %d\n", number);
+    return 0;
 }

@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 
   age = 10;
   printf("The variable age is: %d\n", age);
-  printf("The address of the variable age is: %p\n", &age);
+  printf("The address of the variable age is: %p\n\n", &age);
     
   int *pointerToAge = &age;
   printf("The variable pointerToAge is: %p\n", pointerToAge);
